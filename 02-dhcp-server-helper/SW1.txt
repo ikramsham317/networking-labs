@@ -1,0 +1,41 @@
+﻿! --- SW1 CONFIGURATION ---
+en
+conf t
+hostname SW1
+
+! --- Create VLANs ---
+vlan 10
+ name SALES
+vlan 20
+ name HR
+vlan 99
+ name SERVERS
+exit
+
+! --- Trunk Link to Router ---
+interface FastEthernet0/1
+ switchport mode trunk
+ switchport nonegotiate
+ description Trunk Link to R1
+
+! --- Access Ports for VLAN 10 (Sales PCs) ---
+interface range FastEthernet0/2 - 3
+ switchport mode access
+ switchport access vlan 10
+ no shutdown
+
+! --- Access Ports for VLAN 20 (HR PCs) ---
+interface range FastEthernet0/4 - 5
+ switchport mode access
+ switchport access vlan 20
+ no shutdown
+
+! --- Access Port for DHCP Server ---
+interface FastEthernet0/24
+ switchport mode access
+ switchport access vln 99
+ description Connected to DHCP Server
+ no shutdown
+
+end
+write memory
