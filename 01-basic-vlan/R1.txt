@@ -1,0 +1,23 @@
+﻿! --- R1 BASIC CONFIGURATION ---
+en
+conf t
+hostname R1
+
+! --- ENABLE INTERFACES ---
+interface GigabitEthernet0/0
+ no shutdown
+
+! --- CONFIGURING SUB-INTERFACES FOR VLAN 10 (SALES) ---
+interface GigabitEthernet0/0.10
+ encapsulation dot1Q 10
+ ip address 192.168.10.1 255.255.255.0
+ description Gateway for VLAN 10 SALES
+
+! --- CONFIGURING SUB-INTERFACES FOR VLAN 20 (HR) ---
+interface GigabitEthernet0/0.20
+ encapsulation dot1Q 20
+ ip address 192.168.20.1 255.255.255.0
+ description Gateway for VLAN 20 HR
+
+end
+write memory
