@@ -1,0 +1,31 @@
+﻿! --- R1 DHCP HELPER CONFIGURATION ---
+en
+conf t
+hostname R1
+
+! --- Enable Physical Interface ---
+interface GigabitEthernet0/0
+ no shutdown
+
+! --- Sub-interface for VLAN 10 (Sales) ---
+interface GigabitEthernet0/0.10
+ encapsulation dot1Q 10
+ ip address 192.168.10.1 255.255.255.0
+ ip helper-address 192.168.99.10
+ description Gateway and DHCP Relay for VLAN 10
+
+! --- Sub-interface for VLAN 20 (HR) ---
+interface GigabitEthernet0/0.20
+ encapsulation dot1Q 20
+ ip address 192.168.20.1 255.255.255.0
+ ip helper-address 192.168.99.10
+ description Gateway and DHCP Relay for VLAN 20
+
+! --- Sub-interface for VLAN 99 (Servers) ---
+interface GigabitEthernet0/0.99
+ encapsulation dot1Q 99 native
+ ip address 192.168.99.1 255.255.255.0
+ description Gateway for Server VLAN
+
+end
+write memory
