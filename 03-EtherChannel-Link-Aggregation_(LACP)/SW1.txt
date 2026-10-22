@@ -1,0 +1,41 @@
+! --- SW1 ETHERCHANNEL CONFIGURATION ---
+en
+conf t
+hostname SW1
+
+! --- CREATE VLANS ---
+vlan 10
+ name SALES
+vlan 20
+ name HR
+exit
+
+! --- CONFIGURE LACP ETHERCHANNEL (F0/23 - F0/24) ---
+interface range FastEthernet0/23 - 24
+ switchport mode trunk
+ channel-group 1 mode active
+ description Bundled LACP Links to SW2
+ no shutdown
+exit
+
+! --- CONFIGURE PORT-CHANNEL INTERFACE ---
+interface Port-channel 1
+ switchport mode trunk
+ switchport trunk allowed vlan 10,20
+ description Logical EtherChannel Trunk to SW2
+
+! --- CONFIGURE ACCESS PORTS ---
+interface FastEthernet0/1
+ switchport mode access
+ switchport access vlan 10
+ description PC1 - SALES
+ no shutdown
+
+interface FastEthernet0/2
+ switchport mode access
+ switchport access vlan 20
+ description PC2 - HR
+ no shutdown
+
+end
+write memory
