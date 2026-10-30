@@ -28,8 +28,8 @@ This lab demonstrates how to securely manage a remote **Branch Office Router (`B
 - **HO Router Config:** [`HO-Router.txt`](HO-Router.txt)
 - **BO Router SSH Config:** [`BO-Router.txt`](BO-Router.txt)
 - **Packet Tracer File:** [`lab.pkt`](lab.pkt)
-- **HQ-ADMIN-PC:** [`SSH.PNG`](SSH.png)
-- **BO-PC:** [`ping.png`](ping.png) 
+  ![SSH-testing](SSH.png)
+  ![ping-testing](ping.png) 
 
 ---
 
