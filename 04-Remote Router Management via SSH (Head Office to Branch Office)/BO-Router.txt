@@ -1,0 +1,38 @@
+﻿! --- BO ROUTER SSH CONFIGURATION ---
+en
+conf t
+hostname BO-Router
+
+! --- Domain Name (Required for RSA Key) ---
+ip domain-name mycompany.com
+
+! --- Create Admin User for SSH ---
+username admin privilege 15 secret Admin@123
+
+! --- Generate RSA Crypto Key for SSH ---
+crypto key generate rsa
+1024
+
+! --- Enable SSH Version 2 ---
+ip ssh version 2
+
+! --- LAN & WAN Interfaces ---
+interface GigabitEthernet0/0
+ ip address 192.168.20.1 255.255.255.0
+ no shutdown
+
+interface GigabitEthernet0/1
+ ip address 10.1.1.2 255.255.255.252
+ no shutdown
+
+! --- Static Route to HO LAN ---
+ip route 192.168.10.0 255.255.255.0 10.1.1.1
+
+! --- Configure VTY Lines for SSH Access ---
+line vty 0 4
+ transport input ssh
+ login local
+exit
+
+end
+write memory
