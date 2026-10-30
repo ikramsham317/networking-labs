@@ -5,7 +5,8 @@ A comprehensive collection of my Cisco CCNA (200-301) practice labs, network top
 ## 📁 Labs Included
 * **01-basic-vlan:** Basic VLAN configuration and port assignment labs.
 * **02-DHCP Server:** & Helper Address Setup.
-* **03-EtherChannel:** Link-Aggregation_(LACP),
+* **03-EtherChannel:** Link-Aggregation_(LACP).
+* **04-Remote Router:**  Management via SSH (Head Office to Branch Office)
 
 
 ## 🛠️ Tools Used
