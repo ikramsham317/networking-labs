@@ -36,3 +36,6 @@ This lab demonstrates how to securely manage a remote **Branch Office Router (`B
 1. **Test WAN Connectivity:**
    ```bash
    C:\> ping 10.1.1.2
+
+- **HQ-ADMIN-PC:** ['SSH.PNG'](SSH.png)
+- **BO-PC:** ['ping.png'](ping.png)   
