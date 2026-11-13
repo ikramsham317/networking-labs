@@ -22,8 +22,8 @@ This project demonstrates Layer 2 access port protection using **Cisco Port Secu
 ---
 
 ## ⚙️ Configuration Files
-* **[Router Configuration](configs/ROUTER-1.txt)** — Configures `GigabitEthernet0/1` (`192.168.10.1/24`) as the LAN gateway.
-* **[Switch Configuration](configs/SWITCH-1.txt)** — Enables access mode, sticky MAC learning (`maximum 1`), and `shutdown` violation mode on `FastEthernet0/1` and `FastEthernet0/2`.
+* **[Router Configuration](ROUTER-1.txt)** — Configures `GigabitEthernet0/1` (`192.168.10.1/24`) as the LAN gateway.
+* **[Switch Configuration](SWITCH-1.txt)** — Enables access mode, sticky MAC learning (`maximum 1`), and `shutdown` violation mode on `FastEthernet0/1` and `FastEthernet0/2`.
 
 ---
 
@@ -33,10 +33,10 @@ This project demonstrates Layer 2 access port protection using **Cisco Port Secu
 Both `PC0` (`192.168.10.10`) and `PC1` (`192.168.10.11`) have their MAC addresses dynamically learned and bound to their respective switch ports (`Fa0/1` and `Fa0/2`). Connectivity between them succeeds with **0% packet loss**.
 
 * **PC0 Pinging PC1 (`192.168.10.11`):**
-  ![PC0 Ping Success](screenshots/PC0_PING.png)
+  ![PC0 Ping Success](PC0_PING.png)
 
 * **PC1 Pinging PC0 (`192.168.10.10`):**
-  ![PC1 Ping Success](screenshots/PC1_PING.png)
+  ![PC1 Ping Success](PC1_PING.png)
 
 ---
 
@@ -44,7 +44,7 @@ Both `PC0` (`192.168.10.10`) and `PC1` (`192.168.10.11`) have their MAC addresse
 When the unauthorized device (`Laptop0`) is connected to a secured switch port, the MAC address mismatch triggers a port-security violation, immediately shutting down the interface (`err-disabled` state) and dropping all traffic (**100% packet loss**).
 
 * **Laptop0 Pinging PC0 (`192.168.10.10`) — Request Timed Out:**
-  ![Laptop0 Ping Blocked](screenshots/LAPTOP0_PING.png)
+  ![Laptop0 Ping Blocked](LAPTOP0_PING.png)
 
 ---
 
