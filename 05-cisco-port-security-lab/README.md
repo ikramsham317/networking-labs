@@ -2,6 +2,7 @@
 # 🛡️ Cisco Switch Port Security Lab (Packet Tracer Physical Mode)
 
 ![Port Security Lab Topology](port-security_lab.jpeg)
+![Port Security Lab My-Topology](physical-topolgy.png)
 
 ## 📌 Project Overview
 This project demonstrates Layer 2 access port protection using **Cisco Port Security** with **Sticky MAC Address** learning in Cisco Packet Tracer's Physical Workspace mode. Authorized workstations (`PC0` and `PC1`) communicate normally across the network, while any unauthorized device (`Laptop0`) attempting to connect to a secured port triggers a security violation and is blocked.
