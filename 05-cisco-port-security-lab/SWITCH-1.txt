@@ -1,0 +1,31 @@
+! ==========================================
+! SWITCH-1 (Cisco 2960) - Port Security Config
+! ==========================================
+enable
+configure terminal
+!
+hostname SWITCH-1
+!
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+interface FastEthernet0/1
+ description PC0_PORT
+ switchport mode access
+ switchport port-security
+ switchport port-security maximum 1
+ switchport port-security mac-address sticky
+ switchport port-security violation shutdown
+ no shutdown
+!
+interface FastEthernet0/2
+ description PC1_PORT
+ switchport mode access
+ switchport port-security
+ switchport port-security maximum 1
+ switchport port-security mac-address sticky
+ switchport port-security violation shutdown
+ no shutdown
+!
+end
+write memory
