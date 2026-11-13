@@ -7,6 +7,7 @@ A comprehensive collection of my Cisco CCNA (200-301) practice labs, network top
 * **02-DHCP Server:** & Helper Address Setup.
 * **03-EtherChannel:** Link-Aggregation_(LACP).
 * **04-Remote Router:**  Management via SSH (Head Office to Branch Office)
+* **05-🛡️ Cisco Switch Port Security Lab (Packet Tracer Physical Mode)
 
 
 ## 🛠️ Tools Used
